@@ -1,0 +1,2 @@
+(First JavaScrip Application)
+This is an application that, when given a type of food and the quantity of that food (which the user defines), the user will be able to see other types of food and quantity with an equivalent number of calories . For example, let's say in your application you enter 2 plates of spaghetti, which we've defined as 600 calories per item. You should be able to see how many bananas 2 plates of spaghetti are equivalent to.
