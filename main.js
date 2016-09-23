@@ -89,6 +89,7 @@ let nameInputSkin = new Skin({ borders: { left: 2, right: 2, top: 2, bottom: 2 }
 let fieldLabelSkin = new Skin({ fill: ['transparent', 'transparent', '#C0C0C0', '#acd473'] });
 
 let startText = new Style({font: '20px', color: '#F7CAC9'});
+let calorieButtonText = new Style({font: '20px', color: 'white'});
 let homeText = new Style({font: '20px', color: 'black'});
 let foodColRightStyle = new Style({left: 0, right: 0, font: 'bold 15px', color: "#F7CAC9"});
 let fieldStyle = new Style({ color: 'black', font: 'bold 20px', horizontal: 'left',
@@ -104,7 +105,7 @@ Button Templates:
 let singleButtonTemplate = Button.template($ => ({
     top: 5, bottom: 5, left: 5, right: 5,
     contents: [
-        Label($, {left: 0, right: 0, height: 55, string: $.textForLabel, style: homeText, skin: serenitySkin})
+        Label($, {left: 0, right: 0, height: 55, string: $.textForLabel, style: calorieButtonText, skin: serenitySkin})
     ],
     Behavior: class extends ButtonBehavior {
         onTap(button){
