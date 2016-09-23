@@ -83,12 +83,14 @@ var createNewCalorieConverted = function(){
 
 let whiteSkin = new Skin({ fill: "white" });
 let darkGraySkin = new Skin({ fill: "#202020" });
+let roseSkin = new Skin({ fill: "#F7CAC9"})
+let serenitySkin = new Skin({ fill: "#92A8D1", borders: {left: 2, right: 2, top: 2, bottom: 2}, stroke: 'gray'})
 let nameInputSkin = new Skin({ borders: { left: 2, right: 2, top: 2, bottom: 2 }, stroke: 'gray' });
 let fieldLabelSkin = new Skin({ fill: ['transparent', 'transparent', '#C0C0C0', '#acd473'] });
 
-let startText = new Style({font: '10px', color: 'black'});
+let startText = new Style({font: '20px', color: '#F7CAC9'});
 let homeText = new Style({font: '20px', color: 'black'});
-let foodColRightStyle = new Style({font: '15px', color: 'black'});
+let foodColRightStyle = new Style({left: 0, right: 0, font: 'bold 15px', color: "#F7CAC9"});
 let fieldStyle = new Style({ color: 'black', font: 'bold 20px', horizontal: 'left',
     vertical: 'middle', left: 5, right: 5, top: 5, bottom: 5 });
 let resetStyle = new Style({color: 'white', font: '20px', left: 0, right: 0, top: 0, bottom: 0});
@@ -102,7 +104,7 @@ Button Templates:
 let singleButtonTemplate = Button.template($ => ({
     top: 5, bottom: 5, left: 5, right: 5,
     contents: [
-        Label($, {left: 0, right: 0, height: 55, string: $.textForLabel, style: homeText})
+        Label($, {left: 0, right: 0, height: 55, string: $.textForLabel, style: homeText, skin: serenitySkin})
     ],
     Behavior: class extends ButtonBehavior {
         onTap(button){
@@ -131,6 +133,7 @@ Food Column Template:
 =====================
 */
 var LabeledFood = Line.template($ => ({
+	left: 0, right: 0,
 	contents: [
 		Label( $, {name: $.name, right: 0, string: $.string, style: foodColRightStyle} )
 	]
@@ -261,7 +264,6 @@ let resetContainer = Container.template($ =>({
 	exclusiveTouch: true,
 	active: true,
 	left: 5, right: 5, top: 5, bottom: 0,
-	skin: nameInputSkin,
 	contents:[
 		Label($, {
 			hidden: false,
@@ -293,7 +295,7 @@ let inputColumnContent = Column.template($ => ({
 	        left: 0, right: 0, top: 0,
 	        contents:[
 	            new textEnterField({name: ""}),
-	            new resetContainer({ skin: darkGraySkin, string: "Reset Button" })
+	            new resetContainer({ skin: serenitySkin, string: "Reset Button" })
             ]
         }),
      	new Line({ 
@@ -320,7 +322,7 @@ let calorieColumnContent = Column.template($ => ({
 	        left: 0, right: 0, top: 0,
 	        contents:[
 	            new textEnterField({name: ""}),
-	            new resetContainer({ skin: darkGraySkin, string: "Start Over" })
+	            new resetContainer({ skin: serenitySkin, string: "Start Over" })
             ]
         }),
 		new Column({ 
